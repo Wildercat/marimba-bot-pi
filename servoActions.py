@@ -20,7 +20,7 @@ def play4():
 	playNote(4,30,50)
 
 #play a scale if ran directly
-if __name__ == '__main__':
+def main():
 	notes = [play0,play1,play2,play3,play4]
 	for note in notes:
 		note()
@@ -29,3 +29,6 @@ if __name__ == '__main__':
 	for rnote in reversed(notes):
 		rnote()
 		time.sleep(.100)
+
+if __name__ == '__main__':
+	main()

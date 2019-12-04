@@ -1,9 +1,10 @@
-import timing
+import time
+import checkCurrentSong
 
-i = 0
 try:
     while True:
-        timing.main()
-        
+        checkCurrentSong.main()
+        time.sleep(10)
+
 except KeyboardInterrupt:
-    print('donne')
+    print('\n')

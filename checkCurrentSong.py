@@ -19,4 +19,3 @@ def main():
 		timing.main(json.loads(info['data']['song']['data']))
 	else:
 		print('no new song')
-main()
