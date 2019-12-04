@@ -8,17 +8,17 @@ from adafruit_servokit import ServoKit
 kit = ServoKit(channels=16)
 
 # kit.servo[11].angle = 90
-o = 60
-c = 80
-s = kit.servo[0]
+o = 50
+c = 60
+s = kit.servo[1]
 
 try:
     while True:
-        kit.servo[0].angle = o
-        time.sleep(.050)
-        print(kit.servo[0].angle)
-        kit.servo[0].angle = c
+        s.angle = o
+        time.sleep(.100)
+        print(s.angle)
+        s.angle = c
         time.sleep(2)
-        print(kit.servo[0].angle)
+        print(s.angle)
 except KeyboardInterrupt:
-    kit.servo[0].angle = c
+    s.angle = c
