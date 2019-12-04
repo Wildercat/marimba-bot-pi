@@ -1,5 +1,6 @@
 import time
 import servoActions
+from threading import Thread
 
 def main(song):
 
@@ -11,5 +12,6 @@ def main(song):
         #print(i)
         for j, tone in enumerate(beat):
             if tone == 1:
-                notes[j]()
+                #notes[j]()
+                Thread(target = notes[j]).start()
         time.sleep(.200)
