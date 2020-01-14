@@ -52,7 +52,8 @@ def checkCurrentSong():
 		timing(json.loads(info['data']['song']['data']))
 	#else:
 		#print('no new song')
-try:
+
+try: # check the latest song every 8 seconds
     while True:
         checkCurrentSong()
         time.sleep(8)
