@@ -11,13 +11,13 @@ def playNote(srv,open,closed):
 def play0():
 	playNote(0,40,60)
 def play1():
-	playNote(1,45,65)
+	playNote(1,50,70)
 def play2():
 	playNote(2,40,60)
 def play3():
-	playNote(3,30,50)
+	playNote(3,35,55)
 def play4():
-	playNote(4,30,50)
+	playNote(4,35,55)
 
 #play a scale if ran directly
 def main():
