@@ -1,4 +1,7 @@
 import time
+import requests
+import json
+import timing
 
 def checkCurrentSong():
 	#get latest song
