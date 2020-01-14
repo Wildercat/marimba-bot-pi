@@ -1,7 +1,35 @@
 import time
 import requests
 import json
-import timing
+from threading import Thread
+from adafruit_servokit import ServoKit
+
+kit = ServoKit(channels=16)
+def playNote(srv,open,closed):
+	s = kit.servo[srv]
+	s.angle = open
+	time.sleep(.100)
+	s.angle = closed
+def play0():
+	playNote(0,40,60)
+def play1():
+	playNote(1,50,70)
+def play2():
+	playNote(2,40,60)
+def play3():
+	playNote(3,35,55)
+def play4():
+	playNote(4,35,55)
+
+def timing(song):
+
+    notes = [play0,play1,play2,play3,play4]
+
+    for i, beat in enumerate(song):
+        for j, tone in enumerate(beat):
+            if tone == 1:
+                Thread(target = notes[j]).start()
+        time.sleep(.200)
 
 def checkCurrentSong():
 	#get latest song
@@ -21,7 +49,7 @@ def checkCurrentSong():
 		nf = open('latest.json', 'w+')
 		nf.write(json.dumps(info))
 		nf.close()
-		timing.main(json.loads(info['data']['song']['data']))
+		timing(json.loads(info['data']['song']['data']))
 	#else:
 		#print('no new song')
 try:
